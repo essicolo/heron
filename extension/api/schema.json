@@ -1,0 +1,55 @@
+[
+  {
+    "namespace": "heron",
+    "functions": [
+      {
+        "name": "init",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "config",
+            "type": "object",
+            "additionalProperties": {
+              "type": "any"
+            }
+          },
+          {
+            "name": "strings",
+            "type": "object",
+            "optional": true,
+            "additionalProperties": {
+              "type": "any"
+            }
+          }
+        ]
+      },
+      {
+        "name": "setConfig",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "config",
+            "type": "object",
+            "additionalProperties": {
+              "type": "any"
+            }
+          }
+        ]
+      },
+      {
+        "name": "getStatus",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      },
+      {
+        "name": "clearFailures",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      }
+    ]
+  }
+]

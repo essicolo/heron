@@ -1,0 +1,11 @@
+From: Tester <test@example.com>
+To: Camille Roy <camille@example.com>
+Subject: Apple Mail quote
+Date: Mon, 19 Oct 2026 10:00:00 -0400
+Message-ID: <quote-apple-mail@heron.test>
+X-Heron-Expect: 1
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<html><body dir="auto"><div dir="ltr">NOUVEAU : Merci</div><div dir="ltr"><br><div dir="ltr">Envoyé de mon iPhone</div><div dir="ltr"><br><blockquote type="cite">Le 19 oct. 2026 à 09:15, Charles Martin &lt;cmartin@example.org&gt; a écrit&nbsp;:<br><br></blockquote></div><blockquote type="cite"><div dir="ltr">ANCIEN : le premier jet est prêt.</div></blockquote></div></body></html>

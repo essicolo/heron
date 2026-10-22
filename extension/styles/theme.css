@@ -1,0 +1,195 @@
+/* ==========================================================================
+   heron: general appearance (module "theme").
+   A calm Thunderbird, inspired by the Zen browser and Apple Mail.
+
+   Registered by the extension as a "user" sheet (same priority as userChrome.css), limited to Thunderbird's pages, removed when the module or the extension is turned off.
+   ========================================================================== */
+
+/* Limited to Thunderbird's pages: never message content or the web. */
+@-moz-document url-prefix("chrome://messenger/"), url("about:3pane"), url("about:message") {
+
+/* --- Settings ------------------------------------------------------------ */
+
+:root {
+  --heron-radius: 10px;
+  --heron-accent: AccentColor; /* macOS accent color */
+  --heron-hairline: light-dark(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.08));
+  --heron-divider: light-dark(rgba(0, 0, 0, 0.12), rgba(255, 255, 255, 0.14)); /* pane borders */
+  --heron-quiet: 0.45; /* opacity of secondary elements at rest */
+  --heron-speed: 160ms;
+}
+
+
+/* ==========================================================================
+   1. Main window (messenger.xhtml)
+   (No more tab bar: see glance.css / content/glance.js.)
+   ========================================================================== */
+
+/* Spaces toolbar (mail, contacts, calendar...): now the only navigation. Plain, the active space clearly visible, the others quieter. */
+#spacesToolbar {
+  /* No transparent background: Thunderbird provides a color for both light AND dark mode (a transparent background showed the window's white background under white icons). */
+  border-inline-end: none !important;
+
+  & .spaces-toolbar-button {
+    opacity: 0.6;
+    border-radius: var(--heron-radius) !important;
+    transition: opacity var(--heron-speed) ease;
+  }
+
+  & .spaces-toolbar-button:is(:hover, :focus-visible, .current) {
+    opacity: 1;
+  }
+}
+
+/* Top toolbar: airier, without separators. */
+unified-toolbar {
+  /* One divider under the toolbar: the vertical pane divider starts from it. */
+  border-bottom: 1px solid var(--heron-divider) !important;
+  box-shadow: none !important;
+}
+
+/* ☰ menu: opens below its button without touching it (Thunderbird makes it overlap by 3 px). */
+#appMenu-popup {
+  margin-top: 12px !important;
+}
+
+/* Status bar: discreet. */
+#status-bar {
+  border-top: none !important;
+  opacity: 0.6;
+}
+
+
+/* ==========================================================================
+   2. Folder and message list (about:3pane)
+   ========================================================================== */
+
+/* Splitters between panes: a simple hairline. */
+#folderPaneSplitter,
+#messagePaneSplitter {
+  border-color: var(--heron-divider) !important;
+}
+
+/* Pane headers: same height (see content/theme-pane.js) and a single continuous line below, which the vertical splitter joins. */
+#folderPaneHeaderBar,
+#threadPaneHeaderBar {
+  box-sizing: border-box;
+  min-height: var(--heron-header-height, auto) !important;
+  border-bottom: 1px solid var(--heron-divider) !important;
+  box-shadow: none !important;
+}
+
+/* The "New Message" and "..." buttons at the top of the folder pane stay accessible but fade out. */
+#folderPaneHeaderBar > :not(#folderPaneWriteMessage) {
+  opacity: var(--heron-quiet);
+  transition: opacity var(--heron-speed) ease;
+}
+#folderPaneHeaderBar:hover > * {
+  opacity: 1;
+}
+
+/* "New Message": fills the free space of the bar (less spacing around it). */
+#folderPaneHeaderBar {
+  column-gap: 6px !important;
+  padding-inline: 6px !important;
+}
+/* "New Message": natural width, centered between the two other buttons (see content/theme-pane.js). */
+#folderPaneHeaderBar {
+  justify-content: space-between !important;
+}
+/* If it still does not fit, the extension switches it to icon only (class heron-compact). */
+
+/* Folders: selection as a rounded pill, without outline. */
+#folderTree li > .container {
+  border-radius: var(--heron-radius) !important;
+  outline: none !important;
+}
+
+/* Message list: a plain background, without separate cards.
+   Warning: Thunderbird sets the height of each row in JavaScript.
+   Never add vertical padding to the cards, otherwise the text gets cut off. */
+#threadTree[rows="thread-card"] {
+  --listbox-border-radius: var(--heron-radius);
+  --selected-item-color: var(--heron-accent);
+  background-color: var(--layout-background-0) !important;
+
+  & .card-layout > td {
+    padding-block: 0 !important;
+    padding-inline: 6px !important;
+  }
+
+  /* No border; a thin line under each message, as in Apple Mail. */
+  & .card-layout > td > .card-container {
+    border-color: transparent !important;
+    box-shadow: none !important;
+    background-image: linear-gradient(var(--heron-hairline), var(--heron-hairline));
+    background-repeat: no-repeat;
+    background-position: 24px 100%;
+    background-size: calc(100% - 32px) 1px;
+  }
+
+  /* Hover and selection: tinted rounded pill, without line. */
+  & .card-layout:is(:hover, .selected, .current) > td > .card-container {
+    background-image: none;
+  }
+
+  /* The star and the "⋮" menu only appear on hover (the star stays visible if the message is flagged). */
+  & .card-layout:not(:hover, .selected) .tree-button-more,
+  & .card-layout:not(:hover, .selected, [data-properties~="flagged"]) .tree-button-flag {
+    opacity: 0 !important;
+  }
+}
+
+/* Quick filter bar: no background or border. */
+#quick-filter-bar {
+  border-bottom: none !important;
+  background: transparent !important;
+}
+
+
+/* ==========================================================================
+   3. Reading a message (about:message)
+   ========================================================================== */
+
+/* Header: no frame, more air. */
+#messageHeader {
+  border-bottom: 1px solid var(--heron-hairline) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Reply / Forward / Archive / Delete buttons: icons only.
+   The label stays available as a tooltip on hover. */
+#header-view-toolbar .message-header-view-button {
+  border-color: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: var(--heron-radius) !important;
+  opacity: 0.65;
+  transition: opacity var(--heron-speed) ease, background-color var(--heron-speed) ease;
+
+  & .toolbarbutton-text {
+    display: none !important;
+  }
+
+  &:hover {
+    opacity: 1;
+    background-color: var(--heron-hairline) !important;
+  }
+}
+
+/* "Remote content blocked" bar: a neutral line instead of bright yellow.
+   The protection stays on; only the tone changes. */
+/* Other warnings (calendar disabled...): a light amber tint instead of bright yellow, readable in both light and dark mode. */
+notification-message[type="warning"]:not([value="remoteContent"]) {
+  --message-bar-background-color: color-mix(in srgb, #f5a623 16%, var(--layout-background-0, Canvas)) !important;
+  --message-bar-text-color: var(--layout-color-1, CanvasText) !important;
+}
+
+notification-message[value="remoteContent"] {
+  --message-bar-background-color: light-dark(rgba(0, 0, 0, 0.035), rgba(255, 255, 255, 0.05)) !important;
+  --message-bar-text-color: inherit !important;
+  opacity: 0.8;
+}
+
+} /* @-moz-document */

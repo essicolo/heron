@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title data-i18n="optionsTitle"></title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>heron</h1>
+
+    <section id="failures" hidden>
+      <h2 data-i18n="optionsFailures"></h2>
+      <p class="hint" data-i18n="optionsFailuresHint"></p>
+      <ul id="failuresList"></ul>
+      <button type="button" id="retry" data-i18n="optionsRetry"></button>
+    </section>
+
+    <section>
+      <h2 data-i18n="optionsSwipe"></h2>
+      <p class="hint" data-i18n="optionsSwipeHint"></p>
+
+      <label class="row"><input type="checkbox" id="enabled"> <span data-i18n="optionsSwipeEnabled"></span></label>
+
+      <label class="row"><span data-i18n="optionsSwipeLeft"></span>
+        <select id="left"></select></label>
+
+      <label class="row"><span data-i18n="optionsSwipeRight"></span>
+        <select id="right"></select></label>
+
+      <label class="row"><span data-i18n="optionsUndoDelay"></span>
+        <select id="undoSeconds">
+          <option value="4"></option>
+          <option value="6"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+        </select></label>
+
+      <label class="row"><input type="checkbox" id="invert"> <span data-i18n="optionsInvert"></span>
+        <span class="hint" data-i18n="optionsInvertHint"></span></label>
+    </section>
+
+    <section>
+      <h2 data-i18n="optionsList"></h2>
+      <label class="row"><input type="checkbox" id="preview"> <span data-i18n="optionsPreview"></span></label>
+    </section>
+
+    <section>
+      <h2 data-i18n="optionsSending"></h2>
+      <label class="row"><span data-i18n="optionsUndoSend"></span>
+        <select id="undoSendSeconds">
+          <option value="0" data-i18n="optionsUndoSendOff"></option>
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+        </select></label>
+      <p class="hint" data-i18n="optionsUndoSendHint"></p>
+    </section>
+
+    <section>
+      <h2 data-i18n="optionsConversation"></h2>
+      <label class="row"><span data-i18n="optionsConversationOrder"></span>
+        <select id="conversationOrder">
+          <option value="oldest-first" data-i18n="optionsOldestFirst"></option>
+          <option value="newest-first" data-i18n="optionsNewestFirst"></option>
+        </select></label>
+
+      <label class="row"><input type="checkbox" id="chatLayout"> <span data-i18n="optionsChatLayout"></span>
+        <span class="hint" data-i18n="optionsChatLayoutHint"></span></label>
+    </section>
+
+    <section>
+      <h2 data-i18n="optionsText"></h2>
+      <p class="hint" data-i18n="optionsTextHint"></p>
+      <label class="row"><span data-i18n="optionsFontScale"></span>
+        <select id="fontScale">
+          <option value="1" data-i18n="optionsFontSystem"></option>
+          <option value="1.08"></option>
+          <option value="1.15"></option>
+          <option value="1.25"></option>
+          <option value="1.35"></option>
+        </select></label>
+
+      <label class="row"><input type="checkbox" id="darkMessages"> <span data-i18n="optionsDarkMessages"></span>
+        <span class="hint" data-i18n="optionsDarkMessagesHint"></span></label>
+    </section>
+
+    <section>
+      <h2 data-i18n="optionsKeep"></h2>
+      <p class="hint" data-i18n="optionsKeepHint"></p>
+      <div id="keep"></div>
+      <p class="hint" data-i18n="optionsKeepAlways"></p>
+    </section>
+
+    <section>
+      <h2 data-i18n="optionsModules"></h2>
+      <p class="hint" data-i18n="optionsModulesHint"></p>
+      <div id="modules"></div>
+    </section>
+
+    <p id="saved" aria-live="polite"></p>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

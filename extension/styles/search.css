@@ -1,0 +1,12 @@
+/* heron: single search (module "search"). The top field replaces the quick filter, whose button and bar are hidden (see content/search.js). */
+
+/* Limited to Thunderbird's pages: never message content or the web. */
+@-moz-document url-prefix("chrome://messenger/"), url("about:3pane"), url("about:message") {
+
+#threadPaneQuickFilterButton,
+quick-filter-bar-toggle,
+#quick-filter-bar {
+  display: none !important;
+}
+
+} /* @-moz-document */

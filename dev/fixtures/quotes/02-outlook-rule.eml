@@ -1,0 +1,21 @@
+From: Tester <test@example.com>
+To: Camille Roy <camille@example.com>
+Subject: Outlook rule quote
+Date: Mon, 19 Oct 2026 10:00:00 -0400
+Message-ID: <quote-outlook-rule@heron.test>
+X-Heron-Expect: 1
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<html><body>
+<div dir="ltr">NOUVEAU : merci, c'est noté.</div>
+<div><br></div>
+<hr style="display:inline-block;width:98%" tabindex="-1">
+<font face="Calibri, sans-serif" style="font-size:11pt"><b>De :</b> Charles Martin &lt;cmartin@example.org&gt;<br>
+<b>Envoyé :</b> 19 octobre 2026 09:15<br>
+<b>À :</b> Olivier Bergeron &lt;ob@example.com&gt;<br>
+<b>Objet :</b> RE: Avancement du rapport</font>
+<div>&nbsp;</div>
+<div>ANCIEN : le premier jet est prêt.</div>
+</body></html>

@@ -1,0 +1,18 @@
+From: Tester <test@example.com>
+To: Camille Roy <camille@example.com>
+Subject: Plain text Outlook quote
+Date: Mon, 19 Oct 2026 10:00:00 -0400
+Message-ID: <quote-plain-text-outlook@heron.test>
+X-Heron-Expect: 1
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+NOUVEAU : c'est noté.
+
+De : Charles Martin <cmartin@example.org>
+Envoyé : 19 octobre 2026 09:15
+À : Olivier Bergeron <ob@example.com>
+Objet : RE: Avancement du rapport
+
+ANCIEN : le premier jet est prêt.

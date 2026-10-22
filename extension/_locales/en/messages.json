@@ -1,0 +1,476 @@
+{
+  "extensionName": {
+    "message": "heron"
+  },
+  "optionsTitle": {
+    "message": "heron: settings"
+  },
+  "optionsSwipe": {
+    "message": "Swiping messages"
+  },
+  "optionsSwipeHint": {
+    "message": "Swipe two fingers horizontally over a message in the list (trackpad)."
+  },
+  "optionsSwipeEnabled": {
+    "message": "Enable swiping"
+  },
+  "optionsSwipeLeft": {
+    "message": "Swipe left"
+  },
+  "optionsSwipeRight": {
+    "message": "Swipe right"
+  },
+  "optionsUndoDelay": {
+    "message": "Time to undo"
+  },
+  "optionsSeconds": {
+    "message": "{1} seconds"
+  },
+  "optionsInvert": {
+    "message": "Reverse the gesture direction"
+  },
+  "optionsInvertHint": {
+    "message": "(if the card moves against your fingers)"
+  },
+  "optionsConversation": {
+    "message": "Conversations"
+  },
+  "optionsConversationOrder": {
+    "message": "Message order"
+  },
+  "optionsChatLayout": {
+    "message": "Like a chat"
+  },
+  "optionsChatLayoutHint": {
+    "message": "(your messages on the right, in blue)"
+  },
+  "optionsOldestFirst": {
+    "message": "Newest at the bottom"
+  },
+  "optionsNewestFirst": {
+    "message": "Newest at the top"
+  },
+  "optionsText": {
+    "message": "Reading"
+  },
+  "optionsTextHint": {
+    "message": "Relative to your system text size: it follows macOS, Windows, GNOME or KDE."
+  },
+  "optionsFontScale": {
+    "message": "Size"
+  },
+  "optionsDarkMessages": {
+    "message": "Dark messages when the system is dark"
+  },
+  "optionsDarkMessagesHint": {
+    "message": "(otherwise, messages keep their original colors)"
+  },
+  "optionsFontSystem": {
+    "message": "Same as system"
+  },
+  "optionsSaved": {
+    "message": "Saved"
+  },
+  "actionDelete": {
+    "message": "Delete"
+  },
+  "actionArchive": {
+    "message": "Archive"
+  },
+  "actionToggleRead": {
+    "message": "Mark as read / unread"
+  },
+  "actionFlag": {
+    "message": "Flag"
+  },
+  "actionJunk": {
+    "message": "Mark as junk"
+  },
+  "actionNone": {
+    "message": "Do nothing"
+  },
+  "swipeDelete": {
+    "message": "Delete"
+  },
+  "swipeArchive": {
+    "message": "Archive"
+  },
+  "swipeToggleRead": {
+    "message": "Read / unread"
+  },
+  "swipeFlag": {
+    "message": "Flag"
+  },
+  "swipeJunk": {
+    "message": "Junk"
+  },
+  "swipeDoneDelete": {
+    "message": "Message deleted"
+  },
+  "swipeDoneArchive": {
+    "message": "Message archived"
+  },
+  "swipeDoneToggleRead": {
+    "message": "Marked read / unread"
+  },
+  "swipeDoneFlag": {
+    "message": "Flag changed"
+  },
+  "swipeDoneJunk": {
+    "message": "Marked as junk"
+  },
+  "swipeUndo": {
+    "message": "Undo"
+  },
+  "swipeImpossible": {
+    "message": "This action isn't possible for this message"
+  },
+  "searchResultsFor": {
+    "message": "Results for “{1}”"
+  },
+  "searchOneMessage": {
+    "message": "{1} message"
+  },
+  "searchMessages": {
+    "message": "{1} messages"
+  },
+  "searchScope": {
+    "message": "Search scope"
+  },
+  "searchAllFolders": {
+    "message": "All mailboxes"
+  },
+  "searchThisFolder": {
+    "message": "This folder"
+  },
+  "searchFilters": {
+    "message": "Filters and advanced search"
+  },
+  "searchAdvanced": {
+    "message": "Advanced search"
+  },
+  "searchFrom": {
+    "message": "From"
+  },
+  "searchTo": {
+    "message": "To"
+  },
+  "searchSubject": {
+    "message": "Subject"
+  },
+  "searchContains": {
+    "message": "Contains"
+  },
+  "searchNameOrAddress": {
+    "message": "name or address"
+  },
+  "searchWords": {
+    "message": "words or “exact phrase”"
+  },
+  "searchDate": {
+    "message": "Date"
+  },
+  "searchSince": {
+    "message": "from"
+  },
+  "searchBefore": {
+    "message": "before"
+  },
+  "searchFolder": {
+    "message": "Folder"
+  },
+  "searchAnyFolder": {
+    "message": "any folder"
+  },
+  "searchTag": {
+    "message": "Tag"
+  },
+  "searchAnyTag": {
+    "message": "any tag"
+  },
+  "tipsButton": {
+    "message": "Search tips"
+  },
+  "tipsTitle": {
+    "message": "Quick search"
+  },
+  "tipExampleName": {
+    "message": "mary"
+  },
+  "tipExampleWord": {
+    "message": "invoice"
+  },
+  "tipExamplePhrase": {
+    "message": "annual report"
+  },
+  "tipExampleTag": {
+    "message": "important"
+  },
+  "tipExampleFolder": {
+    "message": "sent"
+  },
+  "tipFrom": {
+    "message": "From this person (name or address)"
+  },
+  "tipTo": {
+    "message": "Sent to this person"
+  },
+  "tipSubject": {
+    "message": "A word in the subject"
+  },
+  "tipPhrase": {
+    "message": "An exact phrase"
+  },
+  "tipUnread": {
+    "message": "Unread messages"
+  },
+  "tipFlagged": {
+    "message": "Flagged messages"
+  },
+  "tipAttachment": {
+    "message": "With an attachment"
+  },
+  "tipTag": {
+    "message": "With a tag"
+  },
+  "tipDates": {
+    "message": "Between two dates (YYYY-MM-DD)"
+  },
+  "tipFolder": {
+    "message": "In a folder"
+  },
+  "tipsFooter": {
+    "message": "Combine them, as in {1}. Enter searches all mailboxes, Escape clears the field."
+  },
+  "searchAttachments": {
+    "message": "Attachments"
+  },
+  "searchUnread": {
+    "message": "Unread"
+  },
+  "searchFlagged": {
+    "message": "Flagged"
+  },
+  "searchWhere": {
+    "message": "Where to search"
+  },
+  "searchClear": {
+    "message": "Clear"
+  },
+  "searchGo": {
+    "message": "Search"
+  },
+  "glanceClose": {
+    "message": "Close"
+  },
+  "glanceCloseTip": {
+    "message": "Close (Esc)"
+  },
+  "glancePrevious": {
+    "message": "Previous message"
+  },
+  "glanceNext": {
+    "message": "Next message"
+  },
+  "composeFormat": {
+    "message": "Formatting"
+  },
+  "composeFormatTip": {
+    "message": "Show / hide formatting (Aa)"
+  },
+  "foldToggle": {
+    "message": "Show / hide the quoted message"
+  },
+  "listVia": {
+    "message": "via {1}"
+  },
+  "listWarnAddress": {
+    "message": "Warning: the display name contains “{1}”, but this message comes from {2}."
+  },
+  "listWarnBrand": {
+    "message": "Warning: the name suggests {1}, but this message comes from {2}."
+  },
+  "listWarnPunycode": {
+    "message": "Warning: {1} uses international characters that can imitate another name."
+  },
+  "listOthers": {
+    "message": "{1} others"
+  },
+  "listCount": {
+    "message": "{1} messages in this conversation"
+  },
+  "optionsModules": {
+    "message": "Features"
+  },
+  "optionsModulesHint": {
+    "message": "Each feature can be turned off. Changes apply immediately."
+  },
+  "labelSeparator": {
+    "message": ": "
+  },
+  "recipientsLess": {
+    "message": "Show less"
+  },
+  "writeShort": {
+    "message": "Write"
+  },
+  "optionsKeep": {
+    "message": "If I remove heron…"
+  },
+  "optionsKeepHint": {
+    "message": "Disabling or removing heron gives Thunderbird back its original settings. Check the ones you want to keep: they become your own."
+  },
+  "keep_density": {
+    "message": "Keep the roomier interface"
+  },
+  "keep_fontSize": {
+    "message": "Keep the text size"
+  },
+  "keep_unifiedFolders": {
+    "message": "Keep the unified folders"
+  },
+  "optionsKeepAlways": {
+    "message": "Always restored: senders' full addresses (without heron, the name alone would hide impersonation) and settings that only matter to heron."
+  },
+  "optionsFailures": {
+    "message": "Features turned off automatically"
+  },
+  "optionsFailuresHint": {
+    "message": "These features failed with this version of Thunderbird. Thunderbird keeps its normal behavior instead."
+  },
+  "optionsRetry": {
+    "message": "Try again next start"
+  },
+  "optionsRetryDone": {
+    "message": "They will be tried again next start"
+  },
+  "optionsList": {
+    "message": "Message list"
+  },
+  "optionsPreview": {
+    "message": "Text preview under the subject"
+  },
+  "optionsSending": {
+    "message": "Sending"
+  },
+  "optionsUndoSend": {
+    "message": "Time to undo a send"
+  },
+  "optionsUndoSendOff": {
+    "message": "Send immediately"
+  },
+  "optionsUndoSendHint": {
+    "message": "The message waits in the outbox during this time; “Undo” reopens it in the compose window."
+  },
+  "module_theme": {
+    "message": "Calm look"
+  },
+  "module_theme_hint": {
+    "message": "cards, hairlines, icons, density, compact “New message”"
+  },
+  "module_conversation": {
+    "message": "Conversation view"
+  },
+  "module_conversation_hint": {
+    "message": "stacked, expandable messages"
+  },
+  "module_list": {
+    "message": "List"
+  },
+  "module_list_hint": {
+    "message": "friendly dates, sender domain, warnings, preview"
+  },
+  "module_threads": {
+    "message": "One row per conversation"
+  },
+  "module_threads_hint": {
+    "message": "collapsed threads, participants, message count (when off, folders stay threaded: View menu)"
+  },
+  "module_unifiedFolders": {
+    "message": "Unified folders"
+  },
+  "module_unifiedFolders_hint": {
+    "message": "at the top of the folder pane, with two accounts or more"
+  },
+  "module_swipe": {
+    "message": "Swipe"
+  },
+  "module_swipe_hint": {
+    "message": "swipe to delete, archive…"
+  },
+  "module_search": {
+    "message": "Single search"
+  },
+  "module_search_hint": {
+    "message": "one field, filters, suggestions"
+  },
+  "module_glance": {
+    "message": "No tabs"
+  },
+  "module_glance_hint": {
+    "message": "settings and messages as overlay cards"
+  },
+  "module_foldQuotes": {
+    "message": "Folded quoted text"
+  },
+  "module_foldQuotes_hint": {
+    "message": "history and signatures behind “•••”"
+  },
+  "module_trackers": {
+    "message": "Tracker report"
+  },
+  "module_trackers_hint": {
+    "message": "blocked trackers shown in the header"
+  },
+  "module_undoSend": {
+    "message": "Undo send"
+  },
+  "module_undoSend_hint": {
+    "message": "a few seconds to change your mind"
+  },
+  "module_compose": {
+    "message": "Calm composing"
+  },
+  "module_compose_hint": {
+    "message": "Send, Attach, Aa"
+  },
+  "undoSendCountdown": {
+    "message": "Sending in {1} s"
+  },
+  "undoSendUndo": {
+    "message": "Undo"
+  },
+  "trackersBlockedOne": {
+    "message": "{1} tracker blocked"
+  },
+  "trackersBlocked": {
+    "message": "{1} trackers blocked"
+  },
+  "trackersActiveOne": {
+    "message": "{1} active tracker"
+  },
+  "trackersActive": {
+    "message": "{1} active trackers"
+  },
+  "trackersBlockedTip": {
+    "message": "These invisible images would have told the sender you opened this message. Thunderbird blocked them:"
+  },
+  "trackersActiveTip": {
+    "message": "Remote content is allowed for this sender: these images can report that you opened this message:"
+  },
+  "conversationCount": {
+    "message": "{1} messages"
+  },
+  "conversationCountUnread": {
+    "message": "{1} messages · {2} unread"
+  },
+  "conversationExpandAll": {
+    "message": "Expand all"
+  },
+  "conversationCollapseAll": {
+    "message": "Collapse all"
+  },
+  "extensionDescription": {
+    "message": "A calm Thunderbird: conversations, swipe, unified search."
+  }
+}

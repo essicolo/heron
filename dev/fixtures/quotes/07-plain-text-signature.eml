@@ -1,0 +1,19 @@
+From: Tester <test@example.com>
+To: Camille Roy <camille@example.com>
+Subject: Plain text quote
+Date: Mon, 19 Oct 2026 10:00:00 -0400
+Message-ID: <quote-plain-text@heron.test>
+X-Heron-Expect: 1
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+NOUVEAU : Merci
+
+-- 
+SIGNATURE Camille Roy
+
+Le 2026-10-19 à 09:15, Charles Martin a écrit :
+> ANCIEN : le premier jet est prêt.
+>
+> Charles

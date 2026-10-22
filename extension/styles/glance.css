@@ -1,0 +1,14 @@
+/* heron: no tabs (module "glance"). The "Open in New Tab" entries are removed from menus (content/glance.js also brings folders opened with a middle click back into the main tab). */
+
+/* Limited to Thunderbird's pages: never message content or the web. */
+@-moz-document url-prefix("chrome://messenger/"), url("about:3pane"), url("about:message") {
+
+#folderPaneContext-openNewTab,
+#mailContext-openNewTab,
+#otherActionsOpenInNewTab,
+#spacesContextNewTabItem,
+#spaces-context-new-tab-item {
+  display: none !important;
+}
+
+} /* @-moz-document */

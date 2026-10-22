@@ -1,0 +1,15 @@
+From: Tester <test@example.com>
+To: Camille Roy <camille@example.com>
+Subject: No quote
+Date: Mon, 19 Oct 2026 10:00:00 -0400
+Message-ID: <no-quote@heron.test>
+X-Heron-Expect: 0
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+NOUVEAU : rendez-vous jeudi.
+
+Date : jeudi 22 octobre
+Lieu : salle B
+De : 10 h à 11 h

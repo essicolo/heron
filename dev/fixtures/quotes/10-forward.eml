@@ -1,0 +1,18 @@
+From: Tester <test@example.com>
+To: Camille Roy <camille@example.com>
+Subject: Forwarded message
+Date: Mon, 19 Oct 2026 10:00:00 -0400
+Message-ID: <forwarded-message@heron.test>
+X-Heron-Expect: 1
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+NOUVEAU : pour info.
+
+---------- Forwarded message ---------
+De : Charles Martin <cmartin@example.org>
+Date: lun. 19 oct. 2026 à 09:15
+Subject: Avancement du rapport
+
+ANCIEN : le premier jet est prêt.

@@ -1,0 +1,28 @@
+From: Tester <test@example.com>
+To: Camille Roy <camille@example.com>
+Subject: Outlook desktop quote
+Date: Mon, 19 Oct 2026 10:00:00 -0400
+Message-ID: <quote-outlook-desktop@heron.test>
+X-Heron-Expect: 1
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<html><head><style>p.MsoNormal{margin:0}</style></head>
+<body lang="FR-CA"><div class="WordSection1">
+<p class="MsoNormal">Bonjour Charles,<o:p></o:p></p>
+<p class="MsoNormal">NOUVEAU : voici mes commentaires.<o:p></o:p></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class="MsoNormal"><b>Olivier Bergeron</b><o:p></o:p></p>
+<p class="MsoNormal">123, rue Principale<o:p></o:p></p>
+<p class="MsoNormal">T 555.555.0127<o:p></o:p></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+<p class="MsoNormal"><b>De&nbsp;:</b> Charles Martin &lt;cmartin@example.org&gt; <br>
+<b>Envoyé&nbsp;:</b> 19 octobre 2026 09:15<br>
+<b>À&nbsp;:</b> Olivier Bergeron &lt;ob@example.com&gt;<br>
+<b>Cc&nbsp;:</b> Patrick Fortin &lt;pf@example.org&gt;<br>
+<b>Objet&nbsp;:</b> RE: Avancement du rapport<o:p></o:p></p>
+</div>
+<p class="MsoNormal">ANCIEN : le premier jet est prêt.<o:p></o:p></p>
+</div></body></html>

@@ -1,0 +1,16 @@
+From: Tester <test@example.com>
+To: Camille Roy <camille@example.com>
+Subject: Thunderbird quote
+Date: Mon, 19 Oct 2026 10:00:00 -0400
+Message-ID: <quote-thunderbird@heron.test>
+X-Heron-Expect: 1
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<html><body>
+<p>NOUVEAU : Merci</p>
+<div class="moz-signature">-- <br>SIGNATURE Camille</div>
+<div class="moz-cite-prefix">Le 2026-10-19 à 09:15, Charles Martin a écrit&nbsp;:<br></div>
+<blockquote type="cite" cite="mid:x@example.org"><p>ANCIEN : le premier jet est prêt.</p></blockquote>
+</body></html>

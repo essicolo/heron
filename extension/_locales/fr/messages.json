@@ -1,0 +1,476 @@
+{
+  "extensionName": {
+    "message": "heron"
+  },
+  "optionsTitle": {
+    "message": "heron : réglages"
+  },
+  "optionsSwipe": {
+    "message": "Balayage des messages"
+  },
+  "optionsSwipeHint": {
+    "message": "Glisse deux doigts horizontalement sur un message de la liste (pavé tactile)."
+  },
+  "optionsSwipeEnabled": {
+    "message": "Activer le balayage"
+  },
+  "optionsSwipeLeft": {
+    "message": "Glisser vers la gauche"
+  },
+  "optionsSwipeRight": {
+    "message": "Glisser vers la droite"
+  },
+  "optionsUndoDelay": {
+    "message": "Délai pour annuler"
+  },
+  "optionsSeconds": {
+    "message": "{1} secondes"
+  },
+  "optionsInvert": {
+    "message": "Inverser le sens du geste"
+  },
+  "optionsInvertHint": {
+    "message": "(si la carte bouge à l'opposé de tes doigts)"
+  },
+  "optionsConversation": {
+    "message": "Conversations"
+  },
+  "optionsConversationOrder": {
+    "message": "Ordre des messages"
+  },
+  "optionsChatLayout": {
+    "message": "Comme une messagerie instantanée"
+  },
+  "optionsChatLayoutHint": {
+    "message": "(vos messages à droite, en bleu)"
+  },
+  "optionsOldestFirst": {
+    "message": "Le plus récent en bas"
+  },
+  "optionsNewestFirst": {
+    "message": "Le plus récent en haut"
+  },
+  "optionsText": {
+    "message": "Lecture"
+  },
+  "optionsTextHint": {
+    "message": "Relative à la taille du texte de ton système : elle suit macOS, Windows, GNOME ou KDE."
+  },
+  "optionsFontScale": {
+    "message": "Taille"
+  },
+  "optionsDarkMessages": {
+    "message": "Messages en sombre quand le système est sombre"
+  },
+  "optionsDarkMessagesHint": {
+    "message": "(sinon, les messages gardent leurs couleurs d'origine)"
+  },
+  "optionsFontSystem": {
+    "message": "Comme le système"
+  },
+  "optionsSaved": {
+    "message": "Enregistré"
+  },
+  "actionDelete": {
+    "message": "Supprimer"
+  },
+  "actionArchive": {
+    "message": "Archiver"
+  },
+  "actionToggleRead": {
+    "message": "Marquer comme lu / non lu"
+  },
+  "actionFlag": {
+    "message": "Marquer d'un drapeau"
+  },
+  "actionJunk": {
+    "message": "Marquer comme indésirable"
+  },
+  "actionNone": {
+    "message": "Ne rien faire"
+  },
+  "swipeDelete": {
+    "message": "Supprimer"
+  },
+  "swipeArchive": {
+    "message": "Archiver"
+  },
+  "swipeToggleRead": {
+    "message": "Lu / non lu"
+  },
+  "swipeFlag": {
+    "message": "Drapeau"
+  },
+  "swipeJunk": {
+    "message": "Indésirable"
+  },
+  "swipeDoneDelete": {
+    "message": "Message supprimé"
+  },
+  "swipeDoneArchive": {
+    "message": "Message archivé"
+  },
+  "swipeDoneToggleRead": {
+    "message": "Marqué lu / non lu"
+  },
+  "swipeDoneFlag": {
+    "message": "Drapeau modifié"
+  },
+  "swipeDoneJunk": {
+    "message": "Marqué comme indésirable"
+  },
+  "swipeUndo": {
+    "message": "Annuler"
+  },
+  "swipeImpossible": {
+    "message": "Action impossible pour ce message"
+  },
+  "searchResultsFor": {
+    "message": "Résultats pour « {1} »"
+  },
+  "searchOneMessage": {
+    "message": "{1} message"
+  },
+  "searchMessages": {
+    "message": "{1} messages"
+  },
+  "searchScope": {
+    "message": "Portée de la recherche"
+  },
+  "searchAllFolders": {
+    "message": "Toutes les boîtes"
+  },
+  "searchThisFolder": {
+    "message": "Ce dossier"
+  },
+  "searchFilters": {
+    "message": "Filtres et recherche avancée"
+  },
+  "searchAdvanced": {
+    "message": "Recherche avancée"
+  },
+  "searchFrom": {
+    "message": "De"
+  },
+  "searchTo": {
+    "message": "À"
+  },
+  "searchSubject": {
+    "message": "Objet"
+  },
+  "searchContains": {
+    "message": "Contient"
+  },
+  "searchNameOrAddress": {
+    "message": "nom ou adresse"
+  },
+  "searchWords": {
+    "message": "mots ou « phrase exacte »"
+  },
+  "searchDate": {
+    "message": "Date"
+  },
+  "searchSince": {
+    "message": "depuis le"
+  },
+  "searchBefore": {
+    "message": "avant le"
+  },
+  "searchFolder": {
+    "message": "Dossier"
+  },
+  "searchAnyFolder": {
+    "message": "tous les dossiers"
+  },
+  "searchTag": {
+    "message": "Étiquette"
+  },
+  "searchAnyTag": {
+    "message": "toutes les étiquettes"
+  },
+  "tipsButton": {
+    "message": "Astuces de recherche"
+  },
+  "tipsTitle": {
+    "message": "Recherche rapide"
+  },
+  "tipExampleName": {
+    "message": "marie"
+  },
+  "tipExampleWord": {
+    "message": "facture"
+  },
+  "tipExamplePhrase": {
+    "message": "rapport annuel"
+  },
+  "tipExampleTag": {
+    "message": "important"
+  },
+  "tipExampleFolder": {
+    "message": "envoyés"
+  },
+  "tipFrom": {
+    "message": "De cette personne (nom ou adresse)"
+  },
+  "tipTo": {
+    "message": "Envoyés à cette personne"
+  },
+  "tipSubject": {
+    "message": "Un mot dans l'objet"
+  },
+  "tipPhrase": {
+    "message": "Une phrase exacte"
+  },
+  "tipUnread": {
+    "message": "Messages non lus"
+  },
+  "tipFlagged": {
+    "message": "Messages avec drapeau"
+  },
+  "tipAttachment": {
+    "message": "Avec une pièce jointe"
+  },
+  "tipTag": {
+    "message": "Avec une étiquette"
+  },
+  "tipDates": {
+    "message": "Entre deux dates (AAAA-MM-JJ)"
+  },
+  "tipFolder": {
+    "message": "Dans un dossier"
+  },
+  "tipsFooter": {
+    "message": "Combinez-les, par exemple {1}. Entrée cherche dans toutes les boîtes, Échap vide le champ."
+  },
+  "searchAttachments": {
+    "message": "Pièces jointes"
+  },
+  "searchUnread": {
+    "message": "Non lus"
+  },
+  "searchFlagged": {
+    "message": "Avec drapeau"
+  },
+  "searchWhere": {
+    "message": "Où chercher"
+  },
+  "searchClear": {
+    "message": "Effacer"
+  },
+  "searchGo": {
+    "message": "Rechercher"
+  },
+  "glanceClose": {
+    "message": "Fermer"
+  },
+  "glanceCloseTip": {
+    "message": "Fermer (Échap)"
+  },
+  "glancePrevious": {
+    "message": "Message précédent"
+  },
+  "glanceNext": {
+    "message": "Message suivant"
+  },
+  "composeFormat": {
+    "message": "Mise en forme"
+  },
+  "composeFormatTip": {
+    "message": "Afficher / masquer la mise en forme (Aa)"
+  },
+  "foldToggle": {
+    "message": "Afficher / masquer le message cité"
+  },
+  "listVia": {
+    "message": "via {1}"
+  },
+  "listWarnAddress": {
+    "message": "Attention : le nom affiché contient « {1} », mais ce message vient de {2}."
+  },
+  "listWarnBrand": {
+    "message": "Attention : le nom évoque {1}, mais ce message vient de {2}."
+  },
+  "listWarnPunycode": {
+    "message": "Attention : {1} utilise des caractères internationaux qui peuvent imiter un autre nom."
+  },
+  "listOthers": {
+    "message": "{1} autres"
+  },
+  "listCount": {
+    "message": "{1} messages dans cette conversation"
+  },
+  "optionsModules": {
+    "message": "Fonctions"
+  },
+  "optionsModulesHint": {
+    "message": "Chaque fonction peut être désactivée. Le changement s'applique tout de suite."
+  },
+  "labelSeparator": {
+    "message": " : "
+  },
+  "recipientsLess": {
+    "message": "Réduire"
+  },
+  "writeShort": {
+    "message": "Écrire"
+  },
+  "optionsKeep": {
+    "message": "Si je retire heron…"
+  },
+  "optionsKeepHint": {
+    "message": "Désactiver ou supprimer heron rend à Thunderbird ses réglages d'origine. Cochez ceux que vous voulez garder : ils deviendront les vôtres."
+  },
+  "keep_density": {
+    "message": "Garder l'interface aérée"
+  },
+  "keep_fontSize": {
+    "message": "Garder la taille du texte"
+  },
+  "keep_unifiedFolders": {
+    "message": "Garder les dossiers unifiés"
+  },
+  "optionsKeepAlways": {
+    "message": "Toujours rétablis : l'adresse complète des expéditeurs (sans heron, le nom seul cacherait les imitations) et les réglages qui ne servent qu'à heron."
+  },
+  "optionsFailures": {
+    "message": "Fonctions désactivées automatiquement"
+  },
+  "optionsFailuresHint": {
+    "message": "Ces fonctions ont échoué avec cette version de Thunderbird. Thunderbird garde son comportement normal à leur place."
+  },
+  "optionsRetry": {
+    "message": "Réessayer au prochain démarrage"
+  },
+  "optionsRetryDone": {
+    "message": "Elles seront réessayées au prochain démarrage"
+  },
+  "optionsList": {
+    "message": "Liste des messages"
+  },
+  "optionsPreview": {
+    "message": "Aperçu du texte sous l'objet"
+  },
+  "optionsSending": {
+    "message": "Envoi"
+  },
+  "optionsUndoSend": {
+    "message": "Délai pour annuler un envoi"
+  },
+  "optionsUndoSendOff": {
+    "message": "Envoyer tout de suite"
+  },
+  "optionsUndoSendHint": {
+    "message": "Le message attend dans la boîte d'envoi pendant ce délai ; « Annuler » le rouvre dans la fenêtre de rédaction."
+  },
+  "module_theme": {
+    "message": "Apparence calme"
+  },
+  "module_theme_hint": {
+    "message": "cartes, filets, icônes, densité, « Nouveau message » compact"
+  },
+  "module_conversation": {
+    "message": "Vue de conversation"
+  },
+  "module_conversation_hint": {
+    "message": "messages empilés, à déplier"
+  },
+  "module_list": {
+    "message": "Liste"
+  },
+  "module_list_hint": {
+    "message": "dates amicales, domaine de l'expéditeur, alertes, aperçu"
+  },
+  "module_threads": {
+    "message": "Une ligne par conversation"
+  },
+  "module_threads_hint": {
+    "message": "fils repliés, participants, nombre de messages (désactivé, les dossiers restent par fils : menu Affichage)"
+  },
+  "module_unifiedFolders": {
+    "message": "Dossiers unifiés"
+  },
+  "module_unifiedFolders_hint": {
+    "message": "en tête du volet, avec au moins deux comptes"
+  },
+  "module_swipe": {
+    "message": "Balayage"
+  },
+  "module_swipe_hint": {
+    "message": "glisser pour supprimer, archiver…"
+  },
+  "module_search": {
+    "message": "Recherche unique"
+  },
+  "module_search_hint": {
+    "message": "un seul champ, filtres, suggestions"
+  },
+  "module_glance": {
+    "message": "Pas d'onglets"
+  },
+  "module_glance_hint": {
+    "message": "paramètres et messages en carte superposée"
+  },
+  "module_foldQuotes": {
+    "message": "Texte cité replié"
+  },
+  "module_foldQuotes_hint": {
+    "message": "historique et signatures derrière « ••• »"
+  },
+  "module_trackers": {
+    "message": "Traqueurs signalés"
+  },
+  "module_trackers_hint": {
+    "message": "traqueurs bloqués indiqués dans l'en-tête"
+  },
+  "module_undoSend": {
+    "message": "Annuler l'envoi"
+  },
+  "module_undoSend_hint": {
+    "message": "quelques secondes pour se rattraper"
+  },
+  "module_compose": {
+    "message": "Rédaction calme"
+  },
+  "module_compose_hint": {
+    "message": "Envoyer, Joindre, Aa"
+  },
+  "undoSendCountdown": {
+    "message": "Envoi dans {1} s"
+  },
+  "undoSendUndo": {
+    "message": "Annuler"
+  },
+  "trackersBlockedOne": {
+    "message": "{1} traqueur bloqué"
+  },
+  "trackersBlocked": {
+    "message": "{1} traqueurs bloqués"
+  },
+  "trackersActiveOne": {
+    "message": "{1} traqueur actif"
+  },
+  "trackersActive": {
+    "message": "{1} traqueurs actifs"
+  },
+  "trackersBlockedTip": {
+    "message": "Ces images invisibles auraient signalé à l'expéditeur que vous avez ouvert ce message. Thunderbird les a bloquées :"
+  },
+  "trackersActiveTip": {
+    "message": "Le contenu distant est autorisé pour cet expéditeur : ces images peuvent signaler que vous avez ouvert ce message :"
+  },
+  "conversationCount": {
+    "message": "{1} messages"
+  },
+  "conversationCountUnread": {
+    "message": "{1} messages · {2} non lus"
+  },
+  "conversationExpandAll": {
+    "message": "Tout déplier"
+  },
+  "conversationCollapseAll": {
+    "message": "Tout replier"
+  },
+  "extensionDescription": {
+    "message": "Un Thunderbird calme : conversations, balayage, recherche unifiée."
+  }
+}
