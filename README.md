@@ -1,4 +1,4 @@
-# heron, a zen thunderbird experiment
+# heron, a zen Thunderbird *experiment*
 
 Thunderbird is a fantastic mail client. But I'm a bit critical of its UX/UI. I spent some time thinking of where everything could be improved.
 
@@ -6,6 +6,18 @@ Thunderbird is a fantastic mail client. But I'm a bit critical of its UX/UI. I s
 - tabs duplicating the workflow
 - search spread into search and quick filters
 - rough interface
+
+## Important notes on security
+
+heron needs access to Thunderbird core functions, like reading your emails: it's not meant to send anything to external servers, nor to load anything Thunderbird won't load, but if my GitHub account gets hacked, and the extension updates automatically to a corrupted version, you might be exposed - of course, I'm not responsible for data leaks or anything. Read [SECURITY.md](SECURITY.md) for more info. There is a userChrome.css file you can use without total access to Thunderbird's API (section *CSS-only edition* below), but you won't have the goodies. And hey, it's an *experiment*, a privileged code running inside Thunderbird, and Thunderbird asks for full access when you install it.
+
+Full access is needed since Thunderbird's extension APIs can't reach the message list, the reading pane, the search field or the tab bar. heron therefore uses an *Experiment*,  All of the code is in this repository in readable form, with no minified or generated files. If a Thunderbird update breaks a module, heron turns that module off for that version and says so in its preferences, while Thunderbird keeps working normally.
+
+**Full access is a lot to ask**, so you don't have to take my word for it. [SECURITY.md](SECURITY.md) lists what heron reads and writes, and explains how to check a release yourself: every package is built by GitHub Actions from the tagged source with a signed provenance attestation (`gh attestation verify`), and builds are reproducible, so you can rebuild one and compare its SHA-256.
+
+## Privacy
+
+heron collects nothing and sends nothing. It makes no network requests and contacts no server, including any server run by its developer. Everything it reads stays inside Thunderbird on your computer. I have no interest in seeing anything you do on your machine, at all.
 
 ## Conversation
 
@@ -65,7 +77,7 @@ Once installed, heron updates itself from this repository, and Thunderbird check
 
 ## CSS-only edition
 
-If you would rather not give any add-on full access, heron's look is also available as a plain style sheet: no add-on, no code, no permissions. You get the calmer interface (cards, hairlines, the spaces bar, softer warnings, the compose toolbar), but nothing that needs code: no conversation view, swipe, unified search, sender domains or undo send.
+If you would rather not give any add-on full access, heron's look is also available as a plain style sheet. You get the calmer interface (cards, hairlines, the spaces bar, softer warnings, the compose toolbar), but nothing that needs code (no conversation view, swipe, unified search, sender domains or undo send).
 
 1. Download `userChrome.css` from the [latest release](https://github.com/essicolo/heron/releases/latest), or take [css/userChrome.css](css/userChrome.css) from this repository.
 2. In Thunderbird, open Help, Troubleshooting Information, and click Open Folder next to Profile Folder.
@@ -82,17 +94,7 @@ heron won't break your setup. Once uninstalled, every change to the interface di
 
 The preferences include a section called "If I remove heron". There you can choose to keep the roomier interface, the text size or the unified folders, which then become your own settings. Senders' full addresses are always restored, because without heron's domain hint the name alone could hide an impersonation.
 
-## Privacy
-
-heron collects nothing and sends nothing. It makes no network requests and contacts no server, including any server run by its developer. Everything it reads stays inside Thunderbird on your computer. I have no interest in seeing anything you do on your machine, at all.
-
-## Why heron asks for full access
-
-Thunderbird's extension APIs cannot reach the message list, the reading pane, the search field or the tab bar. heron therefore uses an Experiment, which is privileged code running inside Thunderbird, and Thunderbird asks for full access when you install it. All of the code is in this repository in readable form, with no minified or generated files. If a Thunderbird update breaks a module, heron turns that module off for that version and says so in its preferences, while Thunderbird keeps working normally.
-
-Full access is a lot to ask, so you don't have to take my word for it. [SECURITY.md](SECURITY.md) lists what heron reads and writes, and explains how to check a release yourself: every package is built by GitHub Actions from the tagged source with a signed provenance attestation (`gh attestation verify`), and builds are reproducible, so you can rebuild one and compare its SHA-256.
-
-## Following is vibe-coded.
+## Following is vibe-coded
 
 ### Development
 
