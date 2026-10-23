@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.2
+
+- CSS-only edition: heron's look as a plain userChrome.css, with no add-on, no code and no permissions. It is generated from the add-on's style sheets, attached to each release and attested like the add-on.
+- The compose window's styles now live in a style sheet (styles/compose.css) instead of the script, so both editions share them.
+
 ## 0.4.1
 
 Security and trust.

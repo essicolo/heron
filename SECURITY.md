@@ -27,22 +27,27 @@ It sends mail only when you press Send. With undo send, the message waits in the
 
 Message content is never interpreted as code. The quoted-text folding works on the message's document through Xray wrappers, so a crafted message cannot trick the privileged code.
 
+## Not comfortable with full access?
+
+The CSS-only edition gives heron's look with no add-on and no code at all: a style sheet that Thunderbird applies to its own windows, which you can read in full before installing. See CSS-only edition in the README.
+
 ## Check it yourself
 
-The code is all here and readable: no minified, bundled or generated files. A quick search for `fetch`, `XMLHttpRequest` or `WebSocket` in `extension/` shows the single local fetch.
+The code is all here and readable: no minified or bundled files. The only generated file is `css/userChrome.css`, built from `extension/styles/` by `dev/make-css.py`, and the release workflow checks that it matches. A quick search for `fetch`, `XMLHttpRequest` or `WebSocket` in `extension/` shows the single local fetch.
 
 Every release is built by GitHub Actions from the tagged source (`.github/workflows/release.yml`) and comes with a signed build provenance attestation. To check that a downloaded package comes from this repository, with the GitHub CLI:
 
 ```sh
-gh attestation verify heron-0.4.1.xpi --repo essicolo/heron
+gh attestation verify heron-0.4.2.xpi --repo essicolo/heron
+gh attestation verify userChrome.css --repo essicolo/heron
 ```
 
 Builds are reproducible: the same source always gives the same file, byte for byte. To rebuild a release yourself and compare:
 
 ```sh
-git checkout v0.4.1
+git checkout v0.4.2
 python3 -I dev/pack.py heron.xpi --update-url https://raw.githubusercontent.com/essicolo/heron/main/updates.json
-shasum -a 256 heron.xpi heron-0.4.1.xpi
+shasum -a 256 heron.xpi heron-0.4.2.xpi
 ```
 
 The two SHA-256 must be identical, and equal to the `update_hash` of that version in `updates.json`.

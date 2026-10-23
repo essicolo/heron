@@ -21,6 +21,16 @@
               "strict_min_version": "140.0"
             }
           }
+        },
+        {
+          "version": "0.4.2",
+          "update_link": "https://github.com/essicolo/heron/releases/download/v0.4.2/heron-0.4.2.xpi",
+          "update_hash": "sha256:ffdeed197d3c730cdcc3c5d96a7fb95975bfc9625b6675241bfa9a5df2cfbd21",
+          "applications": {
+            "gecko": {
+              "strict_min_version": "140.0"
+            }
+          }
         }
       ]
     }

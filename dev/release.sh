@@ -1,7 +1,8 @@
 #!/bin/zsh
 # Prepares a heron release (the version in extension/manifest.json).
 #   1. builds dist/heron-<version>.xpi reproducibly (dev/pack.py), with the update_url of the GitHub repository;
-#   2. adds the version and the package's SHA-256 to updates.json (read by installed copies through update_url).
+#   2. adds the version and the package's SHA-256 to updates.json (read by installed copies through update_url);
+#   3. regenerates the CSS-only edition, css/userChrome.css (dev/make-css.py).
 # Then commit and push to main, and push the tag: the release workflow (.github/workflows/release.yml) rebuilds the same package from the tagged source, checks that its SHA-256 is the one in updates.json, attests it and publishes the release.
 #
 # Usage: dev/release.sh <owner/repo>   e.g. dev/release.sh essicolo/heron
@@ -20,6 +21,7 @@ XPI_URL="https://github.com/$REPO/releases/download/v$VERSION/heron-$VERSION.xpi
 
 grep -q "^## $VERSION$" CHANGELOG.md || { echo "CHANGELOG.md has no '## $VERSION' section (it becomes the release notes)."; exit 1; }
 
+python3 -I dev/make-css.py >/dev/null # the CSS-only edition, with this version in its header
 mkdir -p dist
 python3 -I dev/pack.py "dist/heron-$VERSION.xpi" --update-url "$UPDATE_URL" >/dev/null
 HASH="sha256:$(shasum -a 256 "dist/heron-$VERSION.xpi" | cut -d' ' -f1)" # Thunderbird refuses a downloaded file that doesn't match

@@ -64,6 +64,7 @@ const STYLE_FILES = {
   theme: "styles/theme.css",
   search: "styles/search.css",
   glance: "styles/glance.css",
+  compose: "styles/compose.css",
 };
 
 /** Root of the extension's files, registered by init(). */

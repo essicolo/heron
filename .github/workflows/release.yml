@@ -1,4 +1,4 @@
-# Publishes a release when a version tag (v1.2.3) is pushed.
+# Publishes a release when a version tag (v1.2.3) is pushed: the add-on, and the CSS-only edition (userChrome.css).
 # The package is built here, from the tagged source, with the same reproducible script as locally (dev/pack.py). The build must give exactly the SHA-256 announced in updates.json, and gets a signed build provenance attestation: anyone can check that a downloaded heron-<version>.xpi comes from this repository with
 #   gh attestation verify heron-<version>.xpi --repo essicolo/heron
 # Actions are pinned to a commit (a tag can be moved).
@@ -29,6 +29,12 @@ jobs:
       - name: Build the package (reproducible)
         run: python3 -I dev/pack.py "heron-$VERSION.xpi" --update-url "https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/updates.json"
 
+      - name: Check that the CSS-only edition matches the style sheets
+        run: |
+          python3 -I dev/make-css.py
+          git diff --exit-code css/userChrome.css
+          cp css/userChrome.css userChrome.css
+
       - name: Check that it is the package announced in updates.json
         run: |
           expected=$(python3 -c "
@@ -42,7 +48,9 @@ jobs:
 
       - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
         with:
-          subject-path: heron-${{ env.VERSION }}.xpi
+          subject-path: |
+            heron-${{ env.VERSION }}.xpi
+            userChrome.css
 
       - name: Publish the release
         env:
@@ -53,4 +61,4 @@ jobs:
           text = open('CHANGELOG.md').read()
           section = re.search(r'^## ' + re.escape(os.environ['VERSION']) + r'\n(.*?)(?=^## |\Z)', text, re.S | re.M)
           open('notes.md', 'w').write(section.group(1).strip() if section else '')"
-          gh release create "$GITHUB_REF_NAME" "heron-$VERSION.xpi" --title "heron $VERSION" --notes-file notes.md
+          gh release create "$GITHUB_REF_NAME" "heron-$VERSION.xpi" userChrome.css --title "heron $VERSION" --notes-file notes.md

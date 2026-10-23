@@ -178,6 +178,12 @@ if [[ -n "${HERON_XPIS:-}" ]]; then
   echo 'user_pref("extensions.autoDisableScopes", 0);' >> "$PROFILE/user.js"
 fi
 
+# A userChrome.css to test the CSS edition: HERON_USERCHROME=path/to/userChrome.css
+if [[ -n "${HERON_USERCHROME:-}" ]]; then
+  cp "$HERON_USERCHROME" "$PROFILE/chrome/userChrome.css"
+  echo 'user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);' >> "$PROFILE/user.js"
+fi
+
 # Extra preferences: HERON_PREFS='user_pref("a", 1);'
 [[ -n "${HERON_PREFS:-}" ]] && echo "$HERON_PREFS" >> "$PROFILE/user.js"
 

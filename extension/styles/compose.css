@@ -1,0 +1,43 @@
+/* heron: a calmer compose window (module "compose").
+   Registered by the extension as a user sheet, and part of the CSS-only edition (css/userChrome.css). Every declaration is !important, so it wins over Thunderbird's own styles.
+   The "Aa" button and the hidden formatting bar need content/compose.js. */
+@-moz-document url-prefix("chrome://messenger/content/messengercompose/") {
+
+/* Main toolbar: more room, no separators. */
+#composeToolbar2 { padding-block: 6px !important; gap: 4px !important; }
+#composeToolbar2 > toolbarseparator { display: none !important; }
+
+/* Send: the main button. */
+#button-send { background: AccentColor !important; color: AccentColorText !important; border-radius: 8px !important; padding-inline: 10px !important; }
+#button-send:not([disabled="true"]):hover { filter: brightness(1.08) !important; }
+#button-send[disabled="true"] { opacity: 0.5 !important; }
+
+/* Secondary actions: icons only, subdued (label on hover). */
+#composeToolbar2 > :is(#button-encryption, #button-encryption-options, #button-address,
+                       #spellingButton, #button-save, #button-contacts, #button-signing)
+  .toolbarbutton-text { display: none !important; }
+#composeToolbar2 > :is(#button-encryption, #button-encryption-options, #button-address,
+                       #spellingButton, #button-save, #button-contacts, #button-signing) { opacity: 0.6 !important; }
+#composeToolbar2 > :is(#button-encryption, #button-encryption-options, #button-address,
+                       #spellingButton, #button-save, #button-contacts, #button-signing):hover { opacity: 1 !important; }
+
+/* Aa */
+#heron-format-toggle { appearance: none !important; min-width: 0 !important; margin: 0 !important; padding: 2px 10px !important; border-radius: 8px !important; border: 1px solid transparent !important; background: transparent !important; color: inherit !important; font: 600 15px/1 Georgia, "Times New Roman", serif !important; cursor: pointer !important; }
+#heron-format-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent) !important; }
+#heron-format-toggle[aria-pressed="true"] { background: color-mix(in srgb, AccentColor 18%, transparent) !important; color: AccentColor !important; }
+#heron-format-toggle[hidden] { display: none !important; }
+
+/* Headers (From, To, Cc, Subject): a line under each field instead of a border, accented when the field has focus; gray labels, like Apple Mail. */
+#MsgHeadersToolbar { padding-block: 4px 8px !important; }
+#MsgHeadersToolbar :is(.address-container, #msgSubject) { border: none !important; border-radius: 0 !important; box-shadow: none !important; background: transparent !important; border-bottom: 1px solid color-mix(in srgb, currentColor 14%, transparent) !important; }
+#MsgHeadersToolbar :is(.address-container:focus-within, #msgSubject:focus) { border-bottom-color: AccentColor !important; outline: none !important; }
+#identityLabel, .address-label-container label, #subjectLabel { color: color-mix(in srgb, currentColor 55%, transparent) !important; font-weight: normal !important; }
+#msgIdentity { border-color: transparent !important; background: transparent !important; }
+#extraAddressRowsArea .recipient-button { color: color-mix(in srgb, currentColor 60%, transparent) !important; }
+#extraAddressRowsArea .recipient-button:hover { color: inherit !important; }
+
+/* Formatting bar hidden until requested. */
+:root:not([heron-format]) #FormatToolbar { display: none !important; }
+  
+
+} /* @-moz-document */
