@@ -1,0 +1,56 @@
+# Publishes a release when a version tag (v1.2.3) is pushed.
+# The package is built here, from the tagged source, with the same reproducible script as locally (dev/pack.py). The build must give exactly the SHA-256 announced in updates.json, and gets a signed build provenance attestation: anyone can check that a downloaded heron-<version>.xpi comes from this repository with
+#   gh attestation verify heron-<version>.xpi --repo essicolo/heron
+# Actions are pinned to a commit (a tag can be moved).
+
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write # create the release
+  id-token: write # sign the attestation
+  attestations: write # store the attestation
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Check that the tag matches the manifest version
+        run: |
+          version=$(python3 -c "import json; print(json.load(open('extension/manifest.json'))['version'])")
+          test "v$version" = "$GITHUB_REF_NAME" || { echo "Tag $GITHUB_REF_NAME, manifest $version"; exit 1; }
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+
+      - name: Build the package (reproducible)
+        run: python3 -I dev/pack.py "heron-$VERSION.xpi" --update-url "https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/updates.json"
+
+      - name: Check that it is the package announced in updates.json
+        run: |
+          expected=$(python3 -c "
+          import json, os
+          updates = json.load(open('updates.json'))['addons']['heron@essia']['updates']
+          print(next(u['update_hash'] for u in updates if u['version'] == os.environ['VERSION']))")
+          actual="sha256:$(sha256sum "heron-$VERSION.xpi" | cut -d' ' -f1)"
+          echo "updates.json: $expected"
+          echo "this build:   $actual"
+          test "$expected" = "$actual"
+
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: heron-${{ env.VERSION }}.xpi
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 -c "
+          import os, re
+          text = open('CHANGELOG.md').read()
+          section = re.search(r'^## ' + re.escape(os.environ['VERSION']) + r'\n(.*?)(?=^## |\Z)', text, re.S | re.M)
+          open('notes.md', 'w').write(section.group(1).strip() if section else '')"
+          gh release create "$GITHUB_REF_NAME" "heron-$VERSION.xpi" --title "heron $VERSION" --notes-file notes.md

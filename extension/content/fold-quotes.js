@@ -243,7 +243,22 @@
   }
 
   /** First history header in the message: { node, index } or null. */
+  /** Up to `limit` characters of text from `node` (at `index`) onward, read from the following text nodes only as needed. */
+  function textAfter(node, index, limit = 400) {
+    let text = node.data.slice(index);
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    walker.currentNode = node;
+    for (let n = walker.nextNode(); n && text.length < limit; n = walker.nextNode()) {
+      text += n.data;
+    }
+    return text.slice(0, limit);
+  }
+
+  /** Candidate headers checked at most: a message full of "From:" lines (a digest, or a crafted message) must not freeze Thunderbird. */
+  const MAX_CANDIDATES = 50;
+
   function findHistory() {
+    let candidates = 0;
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       // (Thunderbird header tables, "From: ... Date:", are not history.)
@@ -261,11 +276,10 @@
             return { node: n, index };
           }
           // What follows (text of this node and the next ones) must contain "Envoyé / Sent / Date".
-          const range = document.createRange();
-          range.setStart(n, index);
-          const root = rootOf(n);
-          range.setEnd(root, root.childNodes.length);
-          const after = range.toString().slice(0, 400);
+          if (++candidates > MAX_CANDIDATES) {
+            return null;
+          }
+          const after = textAfter(n, index);
           if (NEXT.test(after.slice(after.indexOf(":") + 1))) {
             return { node: n, index };
           }

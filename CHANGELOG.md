@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.1
+
+Security and trust.
+
+- Undo send: an undone message now leaves the Outbox before anything else (it moves to the local Drafts folder and reopens from there), so it can never be sent afterwards, even if the compose window is slow to open.
+- Quoted-text folding reads the message through Xray wrappers, and its detection is bounded, so a crafted message can neither trick the privileged code nor freeze Thunderbird.
+- Updates are pinned: `updates.json` records the SHA-256 of each package, and Thunderbird refuses a download that doesn't match.
+- Releases are built by GitHub Actions from the tagged source, reproducibly, with a signed build provenance attestation. See SECURITY.md to verify a release yourself.
+- The message list now redraws as soon as Thunderbird has computed a preview.
+
 ## 0.4.0
 
 First public release.

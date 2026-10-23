@@ -159,8 +159,9 @@
     for (const [folder, keys] of pending) {
       try {
         folder.fetchMsgPreviewText([...keys], {
-          OnStartRunningUrl() {},
-          OnStopRunningUrl: () => threadTree?.invalidate(),
+          // nsIUrlListener (lowercase method names since Thunderbird 128).
+          onStartRunningUrl() {},
+          onStopRunningUrl: () => threadTree?.invalidate(),
         });
       } catch (e) {
         console.error("heron: preview", e);

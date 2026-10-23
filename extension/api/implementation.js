@@ -206,7 +206,7 @@ var heron = class extends ExtensionCommon.ExtensionAPI {
      * Runs the module `name` (file MODULE_FILES[name]) in a sandbox whose prototype is `window`. On failure, the module is stopped and turned off for this Thunderbird version.
      * `follow`: the script receives updated settings (otherwise: weak reference, see `running`).
      */
-    function runModule(window, name, { follow = true, module = name, force = false } = {}) {
+    function runModule(window, name, { follow = true, module = name, force = false, xrays = false } = {}) {
       if (!force && !moduleOn(module)) {
         return null;
       }
@@ -214,7 +214,8 @@ var heron = class extends ExtensionCommon.ExtensionAPI {
       try {
         sandbox = Components.utils.Sandbox(window, {
           sandboxPrototype: window,
-          wantXrays: false,
+          // Xrays for untrusted content (a message's own document): the privileged code then sees the DOM as the browser defines it, whatever the message contains.
+          wantXrays: xrays,
         });
         sandbox.heronConfig = Components.utils.cloneInto(config, sandbox);
         sandbox.heronStrings = Components.utils.cloneInto(strings, sandbox);
@@ -336,7 +337,7 @@ var heron = class extends ExtensionCommon.ExtensionAPI {
           return;
         }
         // The reading pane and tabs also have the message display script (background.js); the conversation view's readers do not.
-        runModule(doc.defaultView, "foldQuotes", { follow: false });
+        runModule(doc.defaultView, "foldQuotes", { follow: false, xrays: true });
         // Trackers: in the reader (it sees the message header and content).
         runModule(browser.contentWindow, "trackers", { follow: false });
       } catch (e) {

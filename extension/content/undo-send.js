@@ -80,13 +80,8 @@
     sendLater.sendUnsentMessages(identityOf(job));
   }
 
-  /** Reopens the message in the compose window, then removes it from the Outbox. */
-  function undo(job) {
-    jobs.delete(job);
-    clearTimeout(job.timer);
-    render();
-    const hdr = job.hdr;
-    const before = new Set(Services.wm.getEnumerator("msgcompose"));
+  /** Opens `hdr` in a compose window, as a draft. */
+  function reopen(hdr, job) {
     MailServices.compose.OpenComposeWindow(
       null,
       hdr,
@@ -97,16 +92,63 @@
       null,
       top.msgWindow
     );
-    // The message is removed only once reopened (the window reads its content from the Outbox).
+  }
+
+  /**
+   * Undo: the message first leaves the Outbox for the local Drafts folder, then reopens from there. Whatever happens next (slow or failed compose window, Thunderbird quitting), an undone message can no longer be sent: at worst it waits in Drafts.
+   */
+  function undo(job) {
+    jobs.delete(job);
+    clearTimeout(job.timer);
+    render();
+    const hdr = job.hdr;
+    const drafts = MailServices.accounts.localFoldersServer?.rootFolder?.getFolderWithFlags(Ci.nsMsgFolderFlags.Drafts);
+    if (!drafts) {
+      // No local Drafts folder (unusual): reopen from the Outbox, then remove it there once the window is ready.
+      undoInPlace(job);
+      return;
+    }
+    // Found again by its Message-ID: a move between local folders does not always report the new key.
+    const messageId = hdr.messageId;
+    const findMoved = () => [...drafts.messages].find(h => h.messageId == messageId) ?? null;
+    const onStopCopy = status => {
+      const moved = Components.isSuccessCode(status) ? findMoved() : null;
+      if (moved) {
+        reopen(moved, job);
+      } else {
+        console.error("heron: undo send, could not move the message to Drafts", status);
+        undoInPlace(job);
+      }
+    };
+    // nsIMsgCopyServiceListener (lowercase method names since Thunderbird 128).
+    MailServices.copy.copyMessages(hdr.folder, [hdr], drafts, true, {
+      onStartCopy() {},
+      onProgress() {},
+      setMessageKey() {},
+      getMessageId() {},
+      onStopCopy,
+    }, null, false);
+  }
+
+  /** Fallback: reopen from the Outbox, and remove it there once the compose window has read it. */
+  function undoInPlace(job) {
+    const hdr = job.hdr;
+    const before = new Set(Services.wm.getEnumerator("msgcompose"));
+    reopen(hdr, job);
     const started = Date.now();
     const wait = setInterval(() => {
       const opened = [...Services.wm.getEnumerator("msgcompose")].find(w => !before.has(w));
       const ready = opened?.gMsgCompose?.editor && opened.document.readyState == "complete";
       if (ready || Date.now() - started > 15000) {
         clearInterval(wait);
-        if (ready) {
-          setTimeout(() => hdr.folder.deleteMessages([hdr], null, true, false, null, false), 1000);
-        }
+        // Removed even if the window never got ready: an undone message must not stay where it would be sent. Without a reopened copy, it goes to the Trash (recoverable) rather than being erased.
+        setTimeout(() => {
+          try {
+            hdr.folder.deleteMessages([hdr], null, Boolean(ready), false, null, false);
+          } catch (e) {
+            console.error("heron: undo send", e);
+          }
+        }, ready ? 1000 : 0);
       }
     }, 250);
   }

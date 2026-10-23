@@ -9,6 +9,17 @@
             "gecko": {
               "strict_min_version": "140.0"
             }
+          },
+          "update_hash": "sha256:fae79583303b4a46b77d619c0a85056ebd8fdaadcfdff7d6d6b9a58f927c6c13"
+        },
+        {
+          "version": "0.4.1",
+          "update_link": "https://github.com/essicolo/heron/releases/download/v0.4.1/heron-0.4.1.xpi",
+          "update_hash": "sha256:ca586a427acea36db6b5cf551f118ad9417dd679b368896345bf1b2d796e490f",
+          "applications": {
+            "gecko": {
+              "strict_min_version": "140.0"
+            }
           }
         }
       ]
